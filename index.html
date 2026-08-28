@@ -3,65 +3,339 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tuned Tech</title>
-<meta name="description" content="Tuned Tech — something new, in progress.">
-<meta name="robots" content="noindex">
+<title>Tuned Tech — Custom iOS &amp; Android App Development</title>
+<meta name="description" content="Tuned Tech builds bespoke native mobile apps for iOS and Android. Custom-built software shaped around how your business actually works — no templates, no no-code wrappers.">
+<link rel="canonical" href="https://tunedtech.co/">
+
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0b0c0e">
-<meta property="og:title" content="Tuned Tech">
-<meta property="og:description" content="Tuned Tech — something new, in progress.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tunedtech.co/">
+<meta property="og:title" content="Tuned Tech — Custom iOS &amp; Android App Development">
+<meta property="og:description" content="Bespoke native mobile apps, built around how your business actually works.">
 <meta property="og:image" content="https://tunedtech.co/assets/icon-512.png">
 <meta name="twitter:card" content="summary">
-<style>
-  :root {
-    --bg: #0b0c0e;
-    --fg: #f2f3f5;
-    --muted: #8a8f98;
-    --rule: #23262b;
-  }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  main { max-width: 30rem; }
-  h1 {
-    margin: 0;
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-  .rule {
-    width: 2.5rem;
-    height: 1px;
-    background: var(--rule);
-    margin: 1.5rem 0;
-  }
-  p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <main>
-    <h1>Tuned Tech</h1>
-    <div class="rule"></div>
-    <p>Something new is being built here.</p>
-  </main>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/icon-192.png" alt="" width="28" height="28">
+      <span>Tuned Tech</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-hide" href="#work">Work</a>
+      <a class="nav-hide" href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Native mobile apps, built to order.</h1>
+      <p class="lede">
+        Tuned Tech designs and builds custom iOS and Android applications for businesses
+        that have outgrown templates. Every app is shaped around how your operation
+        actually runs — not the other way around.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
+      </div>
+      <div class="hero-meta">
+        <span>iOS first</span>
+        <span>Android too</span>
+        <span>App Store submission handled</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APPROACH ================= -->
+  <section id="approach">
+    <div class="wrap reveal">
+      <p class="section-label">Approach</p>
+      <h2 class="measure">Most app builders hand you a template. We start with your problem.</h2>
+      <p class="body" style="margin-top: 1.25rem;">
+        App builders are good at one thing: producing something generic, quickly. That works
+        until your business does something specific — and every business worth building an app
+        for does something specific. We build from scratch, so the software fits the workflow
+        instead of the workflow bending around the software.
+      </p>
+
+      <div class="grid-3">
+        <div class="point">
+          <span class="num">01</span>
+          <h3>Built around your workflow</h3>
+          <p>
+            We start by learning how the work actually gets done — the edge cases, the manual
+            steps, the thing everyone works around. That's what the app is designed to solve.
+          </p>
+        </div>
+        <div class="point">
+          <span class="num">02</span>
+          <h3>Native, not a wrapper</h3>
+          <p>
+            Real native applications that feel like they belong on the device: proper
+            performance, proper gestures, proper offline behavior. Not a website in a shell.
+          </p>
+        </div>
+        <div class="point">
+          <span class="num">03</span>
+          <h3>Yours to keep</h3>
+          <p>
+            You own what we build. No platform lock-in, no monthly fee holding your app
+            hostage, no rebuild required the day you want to take it elsewhere.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ================= -->
+  <section class="work" id="work">
+    <div class="wrap reveal">
+      <p class="section-label">Selected work</p>
+      <h2 class="measure">Apps we've shipped.</h2>
+
+      <div class="work-grid">
+        <!-- TODO: replace each .case-shot div with <img src="/assets/work/<name>.png" alt="..."> -->
+        <article class="case">
+          <div class="case-shot">Screenshot</div>
+          <span class="tag">iOS</span>
+          <h3>Project name</h3>
+          <p>One or two lines on what the app does and what it changed for the client.</p>
+        </article>
+
+        <article class="case">
+          <div class="case-shot">Screenshot</div>
+          <span class="tag">iOS &amp; Android</span>
+          <h3>Project name</h3>
+          <p>One or two lines on what the app does and what it changed for the client.</p>
+        </article>
+
+        <article class="case">
+          <div class="case-shot">Screenshot</div>
+          <span class="tag">iOS</span>
+          <h3>Project name</h3>
+          <p>One or two lines on what the app does and what it changed for the client.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section class="process" id="process">
+    <div class="wrap reveal">
+      <p class="section-label">How it works</p>
+      <h2 class="measure">From first call to the App Store.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <div>
+            <h3>Scope</h3>
+            <p>
+              We work out what the app needs to do, what it doesn't, and what the first
+              version should be. You get a clear picture of cost and timeline before anything
+              is built.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div>
+            <h3>Design</h3>
+            <p>
+              Screens and flows, designed against real use rather than a template's defaults.
+              You see and approve the interface before development starts.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div>
+            <h3>Build</h3>
+            <p>
+              Development in visible increments. You get working builds on your own device
+              throughout, so there are no surprises at the end.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">04</span>
+          <div>
+            <h3>Launch &amp; maintain</h3>
+            <p>
+              We handle App Store and Google Play submission, including the review process.
+              After launch, we keep it updated as the platforms change.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap reveal">
+      <p class="section-label">Get in touch</p>
+      <h2 class="measure">Tell us what you're building.</h2>
+
+      <div class="contact-inner">
+        <div>
+          <p class="body">
+            Send over what you have in mind — an idea, a rough spec, or a problem you haven't
+            worked out how to solve yet. We'll tell you honestly whether it's something we're
+            the right fit for.
+          </p>
+          <p class="body" style="margin-top: 1.25rem;">
+            Prefer email? <a href="mailto:hello.tunedtech@gmail.com">hello.tunedtech@gmail.com</a>
+          </p>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-message">What are you building?</label>
+            <textarea id="f-message" name="message" required
+              placeholder="A few sentences is plenty."></textarea>
+          </div>
+
+          <!-- Honeypot: bots fill this, humans never see it -->
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Tuned Tech</span>
+    <div class="footer-links">
+      <a href="mailto:hello.tunedtech@gmail.com">hello.tunedtech@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------------------------------------------------------
+     FORM ENDPOINT
+     Option A — Web3Forms (free, no account needed beyond an email):
+       get a key at https://web3forms.com, paste it below.
+     Option B — GoHighLevel: replace the whole form with your GHL
+       embed so leads land in your CRM and nurture sequence.
+     Until a real key is set, the form refuses to fake a success.
+  --------------------------------------------------------------- */
+  var ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+  var EMAIL = 'hello.tunedtech@gmail.com';
+
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+
+  function say(msg, state) {
+    status.textContent = msg;
+    status.setAttribute('data-state', state || '');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      say('Please fill in every field with a valid email.', 'err');
+      form.reportValidity();
+      return;
+    }
+
+    // Never pretend to deliver mail we cannot deliver.
+    if (ACCESS_KEY.indexOf('REPLACE_WITH') === 0) {
+      say('This form isn’t connected yet — please email ' + EMAIL + ' directly.', 'err');
+      return;
+    }
+
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    say('Sending…');
+
+    var payload = Object.fromEntries(new FormData(form).entries());
+    payload.access_key = ACCESS_KEY;
+    payload.subject = 'New enquiry from tunedtech.co';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.success) {
+          form.reset();
+          say('Thanks — we’ll get back to you shortly.', 'ok');
+        } else {
+          say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
+        }
+      })
+      .catch(function () {
+        say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
+      })
+      .finally(function () { btn.disabled = false; });
+  });
+
+  /* Header hairline once scrolled */
+  var header = document.getElementById('siteHeader');
+  var onScroll = function () {
+    header.setAttribute('data-stuck', String(window.scrollY > 8));
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Reveal on scroll */
+  var reveals = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
 </body>
 </html>
