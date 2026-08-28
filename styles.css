@@ -237,12 +237,15 @@ a { color: inherit; }
 }
 .case-media img {
   display: block;
-  width: auto;
-  max-width: 100%;
+  /* Sized by width + aspect-ratio rather than max-height, so the box is
+     reserved BEFORE the image loads. With width:auto these collapsed to
+     zero height, which both shifted the layout on load and stopped the
+     lazy loader from firing. ~12.5rem wide lands the device near 414px
+     tall — a full-bleed phone would make each card taller than the viewport. */
+  width: min(100%, 12.5rem);
   height: auto;
-  /* A full-bleed phone render makes each card taller than the viewport;
-     cap the device instead so three cases stay comparable at a glance. */
-  max-height: 26rem;
+  aspect-ratio: 579 / 1200;
+  object-fit: contain;
   /* Lifts the device off the background. Requires a transparent PNG. */
   filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.55));
 }

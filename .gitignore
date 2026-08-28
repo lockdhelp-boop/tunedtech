@@ -1,0 +1,4 @@
+.DS_Store
+.claude/
+# Full-resolution source renders — kept locally, too heavy to ship
+assets/work/_originals/
