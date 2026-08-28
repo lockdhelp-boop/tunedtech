@@ -56,6 +56,11 @@ body {
 
 section { padding-block: var(--s-6); }
 
+/* Banded surfaces. The reference alternates near-black / white / cream to
+   give the page a rhythm; full white would break a dark studio's mood, so
+   this alternates two dark surfaces instead — same cadence, quieter. */
+#approach, #process { background: var(--bg-raised); }
+
 .section-label {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -168,11 +173,55 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 
 .hero {
-  padding-block: clamp(4.5rem, 14vh, 8rem) var(--s-6);
+  padding-block: clamp(3.5rem, 11vh, 6.5rem) var(--s-6);
   border-bottom: 1px solid var(--rule);
+  overflow: hidden;              /* rotated devices must not widen the page */
+}
+.hero-grid { display: grid; gap: var(--s-5); align-items: center; }
+@media (min-width: 60rem) {
+  /* minmax(0,·) so neither track is forced wider by its content. A --s-6
+     gap here cost the headline ~77px and pushed it to four cramped lines. */
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, auto); gap: var(--s-5); }
 }
 .hero h1 { max-width: 18ch; }
 .hero .lede { margin-top: var(--s-3); }
+
+/* --- Fanned device trio ---------------------------------------------------
+   A glance at what the studio makes. The same three apps get individual
+   treatment in the work section below; here they read as one composition. */
+.hero-devices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-device {
+  display: block;
+  position: relative;
+  flex: none;
+  transition: transform 0.45s var(--ease);
+}
+.hero-device img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 579 / 1200;
+  filter: drop-shadow(0 22px 44px rgba(0, 0, 0, 0.6));
+}
+.hero-device--side   { width: clamp(5.5rem, 11vw, 9.5rem);  z-index: 1; }
+.hero-device--center { width: clamp(7rem, 14vw, 11.5rem);   z-index: 2; }
+
+.hero-device--left  { transform: rotate(-8deg) translateY(1.75rem); margin-right: -2.25rem; }
+.hero-device--right { transform: rotate( 8deg) translateY(1.75rem); margin-left:  -2.25rem; }
+
+.hero-device--left:hover   { transform: rotate(-8deg) translateY(0.75rem); }
+.hero-device--right:hover  { transform: rotate( 8deg) translateY(0.75rem); }
+.hero-device--center:hover { transform: translateY(-1rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-device:hover { transform: none; }
+  .hero-device--left  { transform: rotate(-8deg) translateY(1.75rem); }
+  .hero-device--right { transform: rotate( 8deg) translateY(1.75rem); }
+}
 .hero-actions {
   margin-top: var(--s-4);
   display: flex;
@@ -229,11 +278,15 @@ a { color: inherit; }
    bordered card around it would read as a frame inside a frame. */
 .case { display: flex; flex-direction: column; }
 
+/* A link, but hidden from the accessibility tree: the "App Store" link
+   below carries the same destination, so exposing both would put two
+   identical tab stops on every card. */
 .case-media {
   margin-bottom: var(--s-3);
   display: flex;
   justify-content: flex-start;   /* device shares the text's left edge */
   transition: transform 0.35s var(--ease);
+  cursor: pointer;
 }
 .case-media img {
   display: block;
@@ -260,6 +313,14 @@ a { color: inherit; }
 }
 .case h3 { margin-bottom: 0.4375rem; }
 .case p { font-size: 0.9375rem; color: var(--muted); }
+
+/* Distinguishes a cofounded product from work done for a client.
+   Scoped under .case so it outranks `.case p` without !important. */
+.case .case-role {
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
 
 .case-link {
   display: inline-flex;
