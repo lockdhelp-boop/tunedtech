@@ -520,7 +520,6 @@ a { color: inherit; }
   display: block;
   width: min(100%, 18rem);
   height: auto;
-  aspect-ratio: 573 / 1200;
   margin-inline: auto;
   filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.5));
 }
@@ -1091,9 +1090,11 @@ section > .wrap { position: relative; z-index: 1; }
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  width: 72%;
+  width: 62%;
+  /* No hardcoded aspect-ratio. The width and height attributes on the img
+     already reserve the box, and they track whatever image is swapped in.
+     A pinned ratio silently stretches the next screenshot that differs. */
   height: auto;
-  aspect-ratio: 579 / 1200;
   filter: drop-shadow(0 18px 34px rgba(0,0,0,0.6));
 }
 
