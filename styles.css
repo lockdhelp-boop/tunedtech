@@ -848,3 +848,114 @@ a { color: inherit; }
   align-content: center;
   min-height: 17rem;
 }
+
+/* ==========================================================================
+   Richer card media
+   The first pass put one small chip in each card and left the middle empty.
+   These bleed a real screenshot off the card edge and stack two or three
+   elements over it, which is what gives the reference its depth.
+   ========================================================================== */
+
+:root {
+  /* The only colour on the site. Used for live/status pills so a card has
+     one point of focus. Set to var(--fg) to go fully monochrome again. */
+  --accent: #e0a244;
+}
+
+.advcard { overflow: hidden; position: relative; }
+
+/* Media that runs off the bottom of the card. */
+.adv-figure {
+  position: relative;
+  /* Top-aligned, like the reference: media sits directly under its copy.
+     Pushing it to the bottom with margin-top:auto left a dead gap in the
+     middle of every card that had less text than the tallest one. */
+  padding-top: var(--s-3);
+}
+.adv-figure .adv-phone {
+  display: block;
+  width: 76%;
+  /* Without an explicit height the height="1200" attribute applies as a
+     presentational hint and the card grows to 1382px. */
+  height: auto;
+  aspect-ratio: 579 / 1200;
+  margin: 0 auto -22%;
+  border-radius: 0.75rem;
+  filter: drop-shadow(0 16px 30px rgba(0,0,0,0.6));
+}
+.adv-float {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 34%;
+  z-index: 2;
+}
+
+/* Stacked chips for cards without a device. */
+.adv-stack {
+  padding-top: var(--s-3);
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.mock-lg { padding: 0.9375rem 1rem; }
+.mock-xl { font-size: 1.75rem; letter-spacing: -0.03em; line-height: 1.05; }
+.mock-strong { font-weight: 500; }
+
+.mock-pill--live {
+  background: var(--accent);
+  color: #1a1206;
+  font-weight: 500;
+}
+
+/* Line-item rows, like an order or a schedule. */
+.mock-items { display: grid; gap: 0.4375rem; }
+.mock-note {
+  color: rgba(16,18,22,0.5);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+}
+
+/* Home-screen grid using the real app icons. */
+.mock-home { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.mock-home img,
+.mock-home span {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 23%;
+}
+.mock-home span { background: rgba(16,18,22,0.10); }
+.mock-home img { box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+
+/* ---------- Panels in the feature rows ---------- */
+
+.panel {
+  position: relative;
+  overflow: hidden;
+}
+.panel-figure { position: relative; margin-top: 0.5rem; }
+.panel-figure img {
+  display: block;
+  width: 58%;
+  height: auto;
+  aspect-ratio: 553 / 1200;
+  margin: 0 auto -14%;
+  border-radius: 0.75rem;
+  filter: drop-shadow(0 16px 30px rgba(0,0,0,0.6));
+}
+.panel-float { position: absolute; left: 0; right: 0; bottom: 26%; z-index: 2; }
+
+.panel-appicon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 23%;
+  display: block;
+  flex: none;
+}
+
+.mock-kv { display: grid; gap: 0.5rem; }
+.mock-kv > div { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+.mock-kv .k { color: rgba(16,18,22,0.55); font-size: 0.75rem; }
+.mock-kv .v { font-size: 0.9375rem; }
