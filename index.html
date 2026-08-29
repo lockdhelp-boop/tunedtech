@@ -116,16 +116,20 @@
         <article class="advcard">
           <h3>Closer than email, faster than the web</h3>
           <p>An icon on the home screen and a notification that arrives without being asked for. No tab, no inbox, no algorithm in between.</p>
-          <div class="adv-figure">
-            <div class="mock mock-notif adv-float">
+          <div class="phone-scene">
+            <div class="phone-frame">
+              <div class="ps-island"></div>
+              <div class="ps-status"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+              <div class="ps-date">Wednesday 7 September</div>
+              <div class="ps-time">9:41</div>
+            </div>
+            <div class="mock mock-notif ps-notif">
               <span class="mock-ic" aria-hidden="true"></span>
               <div style="flex:1">
-                <div class="mock-row"><strong class="mock-strong">LOCKD</strong><span class="mock-sub">now</span></div>
+                <div class="mock-row"><strong class="mock-strong">Your app</strong><span class="mock-sub">now</span></div>
                 <div class="mock-sub">Day 7. Your lock-in list is waiting.</div>
               </div>
             </div>
-            <img class="adv-phone" src="/assets/work/Lockdhomescreen.png" width="579" height="1200"
-                 loading="lazy" decoding="async" alt="">
           </div>
         </article>
 
@@ -231,23 +235,31 @@
           </p>
         </div>
         <div class="row-media">
-          <div class="panel">
-            <div class="mock mock-lg">
-              <div class="mock-row"><strong class="mock-strong">Onboarding flow</strong><span class="mock-pill mock-pill--live">Approved</span></div>
-              <div class="mock-rule"></div>
-              <div class="mock-kv">
-                <div><span class="k">Screens</span><span class="v">4</span></div>
-                <div><span class="k">Empty states</span><span class="v">Covered</span></div>
-                <div><span class="k">Type scale</span><span class="v">Locked</span></div>
+          <div class="scene">
+            <div class="scene-split">
+              <div class="scene-phone">
+                <span class="bar" style="width:60%"></span>
+                <span class="block"></span>
+                <span class="bar" style="width:80%"></span>
+                <span class="bar" style="width:45%"></span>
+                <span class="block"></span>
+              </div>
+              <div style="display:grid;gap:.75rem">
+                <div class="mock">
+                  <div class="mock-row"><strong class="mock-strong">Aa</strong><span class="mock-pill">Inter</span></div>
+                  <div class="mock-sub">Scale and spacing locked before build</div>
+                  <div class="swatches" style="margin-top:.5rem" aria-hidden="true">
+                    <span class="on"></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="wire" aria-hidden="true">
+                  <i></i><i class="mid"></i><i class="short"></i>
+                </div>
               </div>
             </div>
-            <div class="panel-figure">
-              <div class="mock panel-float">
-                <div class="mock-row"><span class="mock-sub">Reviewed before build</span><span class="mock-pill">v3</span></div>
-              </div>
-              <img src="/assets/work/peptrack-onboarding.png" width="553" height="1200"
-                   loading="lazy" decoding="async" alt="">
-            </div>
+            <svg class="cursor" style="left:46%;top:58%" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M5 2l14 8.5-6.2 1.4L9.9 19 5 2z"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -265,27 +277,34 @@
           </p>
         </div>
         <div class="row-media">
-          <div class="panel">
+          <div class="scene">
             <div class="mock mock-lg">
-              <div class="mock-notif">
-                <img class="panel-appicon" src="/assets/work/icons/lockd.png" width="128" height="128" loading="lazy" alt="">
-                <div style="flex:1">
-                  <div class="mock-row"><strong class="mock-strong">LOCKD</strong><span class="mock-pill mock-pill--live">Live</span></div>
-                  <div class="mock-sub">Productivity &middot; Free</div>
+              <div class="listing">
+                <img src="/assets/work/icons/lockd.png" width="128" height="128" loading="lazy" alt="">
+                <div class="meta">
+                  <div class="name mock-strong">LOCKD</div>
+                  <div class="sub">Productivity</div>
                 </div>
+                <span class="get">GET</span>
               </div>
               <div class="mock-rule"></div>
-              <div class="mock-row"><span class="mock-xl">4.8</span><span class="mock-sub">168 ratings<br>across three apps</span></div>
+              <div class="mock-row">
+                <div>
+                  <span class="mock-xl">4.8</span>
+                  <div class="stars-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <span class="mock-sub">168 ratings<br>across three apps</span>
+              </div>
             </div>
             <div class="mock">
               <div class="mock-items">
                 <div class="mock-row">
-                  <img class="panel-appicon" style="width:1.5rem;height:1.5rem" src="/assets/work/icons/purescan.png" width="128" height="128" loading="lazy" alt="">
-                  <span style="flex:1">Pure Scan</span><span class="mock-pill">Live</span>
+                  <img class="panel-appicon" style="width:1.375rem;height:1.375rem" src="/assets/work/icons/purescan.png" width="128" height="128" loading="lazy" alt="">
+                  <span style="flex:1">Pure Scan</span><span class="mock-pill mock-pill--live">Live</span>
                 </div>
                 <div class="mock-row">
-                  <img class="panel-appicon" style="width:1.5rem;height:1.5rem" src="/assets/work/icons/peptrack.png" width="128" height="128" loading="lazy" alt="">
-                  <span style="flex:1">PepTrack</span><span class="mock-pill">Live</span>
+                  <img class="panel-appicon" style="width:1.375rem;height:1.375rem" src="/assets/work/icons/peptrack.png" width="128" height="128" loading="lazy" alt="">
+                  <span style="flex:1">PepTrack</span><span class="mock-pill mock-pill--live">Live</span>
                 </div>
               </div>
             </div>
@@ -307,19 +326,19 @@
           </p>
         </div>
         <div class="row-media">
-          <div class="panel">
+          <div class="scene">
             <div class="mock mock-lg">
               <div class="mock-row"><span class="mock-sub">Weekly active</span><span class="mock-pill mock-pill--live">Trending up</span></div>
-              <div class="mock-bars" aria-hidden="true">
-                <i style="height:40%"></i><i style="height:52%"></i><i style="height:47%"></i>
-                <i style="height:66%"></i><i style="height:74%"></i><i style="height:92%"></i>
+              <div class="chart" aria-hidden="true">
+                <i class="dim" style="height:38%"></i><i class="dim" style="height:52%"></i>
+                <i class="dim" style="height:45%"></i><i style="height:64%"></i>
+                <i style="height:76%"></i><i style="height:94%"></i>
               </div>
             </div>
-            <div class="mock mock-lg">
+            <div class="mock">
               <div class="mock-kv">
                 <div><span class="k">Latest OS readiness</span><span class="v">Shipped</span></div>
                 <div><span class="k">Crash-free sessions</span><span class="v">Monitored</span></div>
-                <div><span class="k">Update downtime</span><span class="v">None</span></div>
               </div>
             </div>
           </div>
