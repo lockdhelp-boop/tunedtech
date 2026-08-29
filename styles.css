@@ -772,7 +772,7 @@ a { color: inherit; }
 .mock-bars i { flex: 1; background: rgba(16,18,22,0.18); border-radius: 2px; }
 .mock-bars i:last-child { background: #101216; }
 
-.mock-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.mock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
 .mock-grid span { aspect-ratio: 1; border-radius: 23%; background: rgba(16,18,22,0.10); }
 .mock-grid span.on { background: #101216; }
 
@@ -876,11 +876,23 @@ a { color: inherit; }
 }
 
 /* Home-screen grid using the real app icons. */
-.mock-home { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+/* minmax(0, 1fr) rather than 1fr: a plain 1fr track will not shrink below its
+   content's min-content size, and these icons carry width="128", so the grid
+   floored at 128px per cell and blew out to 538px inside a 357px card. */
+.mock-home {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  max-width: 13rem;      /* icons at home-screen scale, not tile scale */
+}
+/* height:auto is load-bearing. Without it the height="128" attribute applies
+   as a presentational hint and each grid row floors at 128px, which is what
+   made this card the tallest in the row. */
 .mock-home img,
 .mock-home span {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
   border-radius: 23%;
 }
