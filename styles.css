@@ -959,3 +959,63 @@ a { color: inherit; }
 .mock-kv > div { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
 .mock-kv .k { color: rgba(16,18,22,0.55); font-size: 0.75rem; }
 .mock-kv .v { font-size: 0.9375rem; }
+
+/* ==========================================================================
+   Ambient glow
+   Soft blue bloom behind the content, the way the PepTrack onboarding screen
+   lights its background. Painted on ::before so it sits above a section's own
+   background but beneath its content, which keeps text contrast untouched.
+   ========================================================================== */
+
+:root {
+  /* Matches the blue in LOCKD and PepTrack. Tune the alpha values below to
+     make the whole effect stronger or weaker in one place. */
+  --glow: 74, 138, 255;
+}
+
+section { position: relative; }
+section > .wrap { position: relative; z-index: 1; }
+
+.hero::before,
+.advantage::before,
+.testimonials::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Two blooms behind the headline and the device fan. */
+.hero::before {
+  background:
+    radial-gradient(52rem 30rem at 12% -12%, rgba(var(--glow), 0.16), transparent 62%),
+    radial-gradient(44rem 26rem at 88% 8%,   rgba(var(--glow), 0.10), transparent 60%);
+}
+
+/* Low and to one side, so the cards read against it rather than through it. */
+.advantage::before {
+  background: radial-gradient(38rem 22rem at 82% 88%, rgba(var(--glow), 0.13), transparent 64%);
+}
+
+.testimonials::before {
+  background: radial-gradient(36rem 20rem at 16% 88%, rgba(var(--glow), 0.11), transparent 64%);
+}
+
+/* Sits under the form the way the app lights its primary button. */
+.contact::before {
+  background: radial-gradient(34rem 20rem at 50% 88%, rgba(var(--glow), 0.22), transparent 64%);
+}
+
+/* The banded sections keep their raised surface, so their glow is fainter
+   still or it turns the band muddy rather than lit. */
+#approach::after,
+#process::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(42rem 24rem at 85% -10%, rgba(var(--glow), 0.06), transparent 60%);
+}
