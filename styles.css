@@ -494,52 +494,6 @@ a { color: inherit; }
   border: 0;
 }
 
-/* ---------- Proof band ---------- */
-
-.proof {
-  border-bottom: 1px solid var(--rule);
-  background: var(--bg-raised);
-  padding-block: var(--s-4);
-}
-.proof .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-4);
-}
-.proof-apps { display: flex; align-items: center; gap: 0.875rem; }
-.proof-apps a {
-  display: block;
-  transition: transform 0.25s var(--ease);
-}
-.proof-apps a:hover { transform: translateY(-2px); }
-.proof-apps img {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 23%;
-  display: block;
-  box-shadow: 0 0 0 1px var(--rule);
-}
-.proof-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-4);
-}
-.stat .n {
-  display: block;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
-.stat .l {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.8125rem;
-  color: var(--faint);
-}
-
 /* ---------- Split rows (text one side, media the other) ---------- */
 
 .split {
@@ -987,25 +941,34 @@ section > .wrap { position: relative; z-index: 1; }
   z-index: 0;
 }
 
-/* Two blooms behind the headline and the device fan. */
+/* Each source is a tight hot core inside a wide soft halo. A single wide
+   stop averages out to a flat wash, which reads as haze rather than light. */
 .hero::before {
   background:
-    radial-gradient(52rem 30rem at 12% -12%, rgba(var(--glow), 0.16), transparent 62%),
-    radial-gradient(44rem 26rem at 88% 8%,   rgba(var(--glow), 0.10), transparent 60%);
+    radial-gradient(17rem 11rem at 14% -2%,  rgba(var(--glow), 0.34), transparent 68%),
+    radial-gradient(48rem 30rem at  9% -14%, rgba(var(--glow), 0.14), transparent 62%),
+    radial-gradient(15rem 10rem at 87% 16%,  rgba(var(--glow), 0.22), transparent 68%),
+    radial-gradient(42rem 26rem at 92%  4%,  rgba(var(--glow), 0.09), transparent 62%);
 }
 
 /* Low and to one side, so the cards read against it rather than through it. */
 .advantage::before {
-  background: radial-gradient(38rem 22rem at 82% 88%, rgba(var(--glow), 0.13), transparent 64%);
+  background:
+    radial-gradient(15rem 10rem at 84% 84%, rgba(var(--glow), 0.26), transparent 68%),
+    radial-gradient(40rem 24rem at 82% 92%, rgba(var(--glow), 0.10), transparent 64%);
 }
 
 .testimonials::before {
-  background: radial-gradient(36rem 20rem at 16% 88%, rgba(var(--glow), 0.11), transparent 64%);
+  background:
+    radial-gradient(14rem 9rem  at 15% 84%, rgba(var(--glow), 0.24), transparent 68%),
+    radial-gradient(36rem 21rem at 13% 92%, rgba(var(--glow), 0.09), transparent 64%);
 }
 
 /* Sits under the form the way the app lights its primary button. */
 .contact::before {
-  background: radial-gradient(34rem 20rem at 50% 88%, rgba(var(--glow), 0.22), transparent 64%);
+  background:
+    radial-gradient(14rem 9rem  at 50% 84%, rgba(var(--glow), 0.32), transparent 68%),
+    radial-gradient(38rem 23rem at 50% 92%, rgba(var(--glow), 0.13), transparent 64%);
 }
 
 /* The banded sections keep their raised surface, so their glow is fainter
@@ -1017,5 +980,7 @@ section > .wrap { position: relative; z-index: 1; }
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(42rem 24rem at 85% -10%, rgba(var(--glow), 0.06), transparent 60%);
+  background:
+    radial-gradient(13rem 9rem  at 86% -2%,  rgba(var(--glow), 0.16), transparent 68%),
+    radial-gradient(40rem 24rem at 88% -10%, rgba(var(--glow), 0.06), transparent 62%);
 }
