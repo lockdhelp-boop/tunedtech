@@ -40,7 +40,7 @@
       <a href="#approach">Approach</a>
       <a href="#process">Process</a>
     </nav>
-    <a class="btn btn-primary btn-sm header-cta" href="#contact">Get started</a>
+    <a class="btn btn-primary btn-sm header-cta" href="/start/">Get started</a>
   </div>
 </header>
 
@@ -56,7 +56,7 @@
           outgrown templates. Every app is shaped around how your operation actually runs.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Start a project</a>
+          <a class="btn btn-primary" href="/start/">Start a project</a>
           <a class="btn btn-ghost" href="#work">See the work</a>
         </div>
         <div class="hero-meta">
@@ -391,7 +391,7 @@
   <section class="work" id="work">
     <div class="wrap reveal">
       <p class="section-label">Selected work</p>
-      <h2 class="measure">See some of our work.</h2>
+      <h2 class="measure">Some of our work.</h2>
 
       <div class="work-grid">
 
@@ -651,38 +651,13 @@
       <p class="section-label">Get in touch</p>
       <h2 class="measure">Tell us what you're building.</h2>
 
-      <div class="contact-inner">
-        <div>
-          <p class="body">
-            Send over what you have in mind: an idea, a rough spec, or a problem you have not
-            solved yet. We will tell you honestly if we are the right fit.
-          </p>
-          <p class="body" style="margin-top: 1.25rem;">
-            Prefer email? <a href="mailto:hello.tunedtech@gmail.com">hello.tunedtech@gmail.com</a>
-          </p>
-        </div>
-
-        <form class="form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input type="text" id="f-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input type="email" id="f-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="f-message">What are you building?</label>
-            <textarea id="f-message" name="message" required
-              placeholder="A few sentences is plenty."></textarea>
-          </div>
-
-          <!-- Honeypot: bots fill this, humans never see it -->
-          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
-
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
+      <p class="body" style="margin-top: 1.25rem;">
+        An idea, a rough spec, or a problem you have not worked out how to solve yet.
+        We will tell you honestly whether we are the right fit.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/start/">Start a project</a>
+        <a class="btn btn-ghost" href="mailto:hello.tunedtech@gmail.com">Email us instead</a>
       </div>
     </div>
   </section>
@@ -706,68 +681,6 @@
 <script>
 (function () {
   'use strict';
-
-  /* ---------------------------------------------------------------
-     FORM ENDPOINT
-     Option A. Web3Forms (free, no account needed beyond an email):
-       get a key at https://web3forms.com, paste it below.
-     Option B. GoHighLevel: replace the whole form with your GHL
-       embed so leads land in your CRM and nurture sequence.
-     Until a real key is set, the form refuses to fake a success.
-  --------------------------------------------------------------- */
-  var ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
-  var EMAIL = 'hello.tunedtech@gmail.com';
-
-  var form = document.getElementById('contactForm');
-  var status = document.getElementById('formStatus');
-
-  function say(msg, state) {
-    status.textContent = msg;
-    status.setAttribute('data-state', state || '');
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      say('Please fill in every field with a valid email.', 'err');
-      form.reportValidity();
-      return;
-    }
-
-    // Never pretend to deliver mail we cannot deliver.
-    if (ACCESS_KEY.indexOf('REPLACE_WITH') === 0) {
-      say('This form is not connected yet. Please email ' + EMAIL + ' directly.', 'err');
-      return;
-    }
-
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true;
-    say('Sending...');
-
-    var payload = Object.fromEntries(new FormData(form).entries());
-    payload.access_key = ACCESS_KEY;
-    payload.subject = 'New enquiry from tunedtech.co';
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d.success) {
-          form.reset();
-          say('Thanks. We will get back to you shortly.', 'ok');
-        } else {
-          say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
-        }
-      })
-      .catch(function () {
-        say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
-      })
-      .finally(function () { btn.disabled = false; });
-  });
 
   /* Advantage carousel: scroll by one card, and disable the arrows at the
      ends rather than letting them look active but do nothing. */

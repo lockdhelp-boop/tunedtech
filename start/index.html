@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start a Project | Tuned Tech</title>
+<meta name="description" content="Tell Tuned Tech what you are building. Send an idea, a rough spec, or a problem you have not solved yet, and get an honest answer on whether we are the right fit.">
+<link rel="canonical" href="https://tunedtech.co/start/">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0b0c0e">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tunedtech.co/start/">
+<meta property="og:title" content="Start a Project | Tuned Tech">
+<meta property="og:description" content="Tell us what you are building.">
+<meta property="og:image" content="https://tunedtech.co/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/icon-192.png" alt="" width="28" height="28">
+      <span>Tuned Tech</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#process">Process</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm header-cta" href="/">Back to site</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="contact start-hero">
+    <div class="wrap">
+      <div class="start-grid">
+
+        <div class="start-copy">
+          <p class="section-label">Start a project</p>
+          <h1>Tell us what you're building.</h1>
+          <p class="lede">
+            An idea, a rough spec, or a problem you have not worked out how to solve yet.
+            All of it is useful. We will tell you honestly whether we are the right fit.
+          </p>
+
+          <ol class="start-steps">
+            <li>
+              <span class="n">01</span>
+              <div>
+                <h3>You send the shape of it</h3>
+                <p>Whatever you have. A paragraph is enough to start.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n">02</span>
+              <div>
+                <h3>We reply with an honest read</h3>
+                <p>Whether it is a fit, what it would take, and anything we think you should know before spending money.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n">03</span>
+              <div>
+                <h3>Scoping, if it makes sense</h3>
+                <p>We work out version one, then give you a fixed figure and a timeline before anything gets built.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="start-alt">
+            Prefer email? <a href="mailto:hello.tunedtech@gmail.com">hello.tunedtech@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="start-formwrap">
+          <form class="form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-company">Company <span class="opt">(optional)</span></label>
+              <input type="text" id="f-company" name="company" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f-budget">Rough budget <span class="opt">(optional)</span></label>
+              <select id="f-budget" name="budget">
+                <option value="">Not sure yet</option>
+                <option>Under 10k</option>
+                <option>10k to 25k</option>
+                <option>25k to 50k</option>
+                <option>50k and up</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">What are you building?</label>
+              <textarea id="f-message" name="message" required
+                placeholder="What it should do, who it is for, and anything you have already tried."></textarea>
+            </div>
+
+            <!-- Honeypot: bots fill this, humans never see it -->
+            <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
+
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="form-note">We read everything and reply to every real enquiry.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Tuned Tech</span>
+    <nav class="footer-nav" aria-label="Services">
+      <a href="/">App development</a>
+      <a href="/web-design/">Web design</a>
+      <a href="/automation/">Automation</a>
+    </nav>
+    <div class="footer-links">
+      <a href="mailto:hello.tunedtech@gmail.com">hello.tunedtech@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------------------------------------------------------
+     FORM ENDPOINT
+     Option A. Web3Forms (free, no account needed beyond an email):
+       get a key at https://web3forms.com, paste it below.
+     Option B. GoHighLevel: replace the whole form with your GHL
+       embed so leads land in your CRM and nurture sequence.
+     Until a real key is set, the form refuses to fake a success.
+  --------------------------------------------------------------- */
+  var ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+  var EMAIL = 'hello.tunedtech@gmail.com';
+
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+
+  function say(msg, state) {
+    status.textContent = msg;
+    status.setAttribute('data-state', state || '');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      say('Please fill in every required field with a valid email.', 'err');
+      form.reportValidity();
+      return;
+    }
+
+    // Never pretend to deliver mail we cannot deliver.
+    if (ACCESS_KEY.indexOf('REPLACE_WITH') === 0) {
+      say('This form is not connected yet. Please email ' + EMAIL + ' directly.', 'err');
+      return;
+    }
+
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    say('Sending...');
+
+    var payload = Object.fromEntries(new FormData(form).entries());
+    payload.access_key = ACCESS_KEY;
+    payload.subject = 'New project enquiry from tunedtech.co';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.success) {
+          form.reset();
+          say('Thanks. We will get back to you shortly.', 'ok');
+        } else {
+          say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
+        }
+      })
+      .catch(function () {
+        say('Something went wrong. Please email ' + EMAIL + ' instead.', 'err');
+      })
+      .finally(function () { btn.disabled = false; });
+  });
+
+  var header = document.getElementById('siteHeader');
+  var onScroll = function () { header.setAttribute('data-stuck', String(window.scrollY > 8)); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+</body>
+</html>
