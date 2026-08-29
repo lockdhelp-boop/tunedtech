@@ -1279,36 +1279,3 @@ section > .wrap { position: relative; z-index: 1; }
 .breadcrumbs { font-size: 0.8125rem; color: var(--faint); margin-bottom: var(--s-3); }
 .breadcrumbs a { color: var(--muted); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--fg); }
-
-/* ---------- Cursor backlight ----------
-   The host clips the layer so a glow near the edge cannot extend the page.
-   Screen blending means the light adds rather than tints, which keeps text
-   underneath legible. */
-
-.cursor-glow-host {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0;
-  transition: opacity 0.45s var(--ease);
-}
-.cursor-glow-host[data-on="true"] { opacity: 1; }
-
-.cursor-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32rem;
-  height: 32rem;
-  margin: -16rem 0 0 -16rem;   /* centres the bloom on the pointer */
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  will-change: transform;
-  background: radial-gradient(circle closest-side,
-    rgba(var(--signal), 0.20),
-    rgba(var(--signal), 0.09) 38%,
-    rgba(var(--signal), 0.03) 62%,
-    transparent 78%);
-}
