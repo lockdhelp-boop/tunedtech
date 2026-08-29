@@ -1199,7 +1199,17 @@ section > .wrap { position: relative; z-index: 1; }
   background: rgba(var(--signal), 0.9);
   color: #fff;
 }
-.stars-sm { color: var(--fg); font-size: 0.625rem; letter-spacing: 0.14em; }
+/* Stars sit beside the score rather than under it, on the score's baseline,
+   which closes the gap that opened when the second line of caption went. */
+.rating-inline { display: flex; align-items: baseline; gap: 0.5rem; }
+.stars-sm {
+  /* These sit on a .mock card, which is light. var(--fg) here was near-white
+     on near-white, so the stars rendered but were invisible. */
+  color: rgba(16, 18, 22, 0.82);
+  font-size: 0.9375rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
 
 /* Chart drawn from divs so it needs no asset and recolours with the theme. */
 .chart { display: flex; align-items: flex-end; gap: 0.375rem; height: 4.5rem; }
