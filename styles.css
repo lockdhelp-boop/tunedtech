@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tuned Tech — tunedtech.co
+   Tuned Tech, tunedtech.co
    Monochrome, Inter, restrained. Type does the work; color stays out of it.
    ========================================================================== */
 
@@ -58,7 +58,7 @@ section { padding-block: var(--s-6); }
 
 /* Banded surfaces. The reference alternates near-black / white / cream to
    give the page a rhythm; full white would break a dark studio's mood, so
-   this alternates two dark surfaces instead — same cadence, quieter. */
+   this alternates two dark surfaces instead: same cadence, quieter. */
 #approach, #process { background: var(--bg-raised); }
 
 .section-label {
@@ -105,13 +105,19 @@ a { color: inherit; }
 }
 .site-header[data-stuck="true"] { border-bottom-color: var(--rule); }
 
+/* Three tracks so the nav is centred on the page, not merely between the
+   brand and the CTA (those two have different widths, which would push a
+   flex-centred nav off-centre). */
 .site-header .wrap {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: var(--s-3);
   min-height: 4.25rem;
 }
+.brand      { justify-self: start; }
+.nav        { justify-self: center; }
+.header-cta { justify-self: end; }
 
 .brand {
   display: inline-flex;
@@ -143,7 +149,13 @@ a { color: inherit; }
   transition: color 0.2s var(--ease);
 }
 .nav a:hover, .nav a:focus-visible { color: var(--fg); }
-@media (max-width: 40rem) { .nav .nav-hide { display: none; } }
+
+/* Below the breakpoint the centre track collapses and the CTA stays put,
+   which is the one thing a visitor needs from a header on a phone. */
+@media (max-width: 46rem) {
+  .site-header .wrap { grid-template-columns: 1fr auto; }
+  .nav { display: none; }
+}
 
 /* ---------- Buttons ---------- */
 
@@ -169,6 +181,8 @@ a { color: inherit; }
 
 .btn-ghost { border-color: var(--rule-firm); color: var(--fg); }
 .btn-ghost:hover { border-color: var(--fg); }
+
+.btn-sm { padding: 0.5625rem 1rem; font-size: 0.875rem; }
 
 /* ---------- Hero ---------- */
 
@@ -294,7 +308,7 @@ a { color: inherit; }
      reserved BEFORE the image loads. With width:auto these collapsed to
      zero height, which both shifted the layout on load and stopped the
      lazy loader from firing. ~12.5rem wide lands the device near 414px
-     tall — a full-bleed phone would make each card taller than the viewport. */
+     tall. A full-bleed phone would make each card taller than the viewport. */
   width: min(100%, 12.5rem);
   height: auto;
   aspect-ratio: 579 / 1200;
