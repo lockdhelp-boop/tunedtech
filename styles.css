@@ -640,3 +640,71 @@ a { color: inherit; }
   flex-wrap: wrap;
   gap: var(--s-2) var(--s-3);
 }
+
+/* ---------- Testimonial marquee ----------
+   Full-bleed so cards run edge to edge. The track holds the cards twice and
+   translates exactly -50%, so the loop is seamless; the duplicate set is
+   aria-hidden so screen readers hear each review once. */
+
+.testimonials { border-top: 1px solid var(--rule); overflow: hidden; }
+
+.marquee {
+  margin-top: var(--s-5);
+  overflow: hidden;
+  /* Fade the cards into the page edges instead of cutting them off. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: var(--s-3);
+  width: max-content;
+  /* Twelve cards carry eleven gaps, so -50% lands half a gap short of where
+     the duplicate set starts and the loop visibly jumps. The trailing pad
+     makes the width 12 cards + 12 gaps, so -50% is exactly one set. */
+  padding-right: var(--s-3);
+  animation: marquee-scroll 64s linear infinite;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+.tcard {
+  flex: none;
+  width: min(21rem, 78vw);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 0.875rem;
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.tcard .stars {
+  color: var(--fg);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+}
+.tcard blockquote {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--fg);
+}
+.tcard figcaption {
+  font-size: 0.8125rem;
+  color: var(--faint);
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+.tcard figcaption .app { color: var(--muted); }
+
+/* Motion here is decorative; without it the row becomes a normal swipeable
+   strip rather than disappearing. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
+}
