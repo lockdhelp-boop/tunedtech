@@ -1224,3 +1224,58 @@ section > .wrap { position: relative; z-index: 1; }
   background: linear-gradient(180deg, rgba(var(--signal), 0.85), rgba(var(--signal), 0.25));
 }
 .chart i.dim { background: rgba(255,255,255,0.10); }
+
+/* ---------- Case study pages ---------- */
+
+.cs-hero { padding-block: clamp(3rem, 8vh, 5rem) var(--s-5); }
+.cs-grid { display: grid; gap: var(--s-5); align-items: center; }
+@media (min-width: 58rem) { .cs-grid { grid-template-columns: 1.1fr 1fr; gap: var(--s-6); } }
+.cs-hero h1 { font-size: clamp(2.25rem, 5.5vw, 3.5rem); margin-bottom: var(--s-2); }
+
+.cs-device { display: flex; justify-content: center; }
+.cs-device img {
+  display: block;
+  width: min(100%, 15rem);
+  height: auto;
+  aspect-ratio: 579 / 1200;
+  filter: drop-shadow(0 22px 44px rgba(0,0,0,0.6));
+}
+
+.cs-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
+}
+.cs-meta div { display: grid; gap: 0.25rem; }
+.cs-meta .k { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.cs-meta .v { font-size: 1.0625rem; }
+
+.cs-quote {
+  margin-top: var(--s-5);
+  padding: var(--s-4);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 1.125rem;
+}
+.cs-quote blockquote {
+  margin: 0;
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+.cs-quote figcaption { margin-top: 0.875rem; font-size: 0.875rem; color: var(--faint); }
+
+.cs-shots { display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); margin-top: var(--s-5); }
+.cs-shots img {
+  display: block; width: 100%; height: auto;
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,0.55));
+}
+
+.cs-next { border-top: 1px solid var(--rule); }
+.cs-next-grid { display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: var(--s-4); }
+
+.breadcrumbs { font-size: 0.8125rem; color: var(--faint); margin-bottom: var(--s-3); }
+.breadcrumbs a { color: var(--muted); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--fg); }
