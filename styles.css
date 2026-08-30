@@ -1082,7 +1082,6 @@ section > .wrap { position: relative; z-index: 1; }
 .start-steps h3 { font-size: 1.0625rem; margin-bottom: 0.25rem; }
 .start-steps p { color: var(--muted); font-size: 0.9375rem; }
 
-.start-alt { margin-top: var(--s-4); color: var(--muted); font-size: 0.9375rem; }
 
 .start-formwrap {
   background: var(--bg-raised);
