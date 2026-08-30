@@ -1463,3 +1463,36 @@ section > .wrap { position: relative; z-index: 1; }
 }
 .versus-list .mark { color: var(--faint); font-size: 0.875rem; line-height: 1.6; }
 .is-ours .versus-list .mark { color: var(--accent); }
+
+/* ---------- Types of apps ---------- */
+
+.types { border-top: 1px solid var(--rule); }
+.type-grid {
+  list-style: none;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0.625rem;
+}
+.type-grid li {
+  border: 1px solid var(--rule);
+  border-radius: 0.625rem;
+  padding: 0.8125rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  background: var(--bg-raised);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.type-grid li:hover { border-color: var(--rule-firm); color: var(--fg); }
+.type-note { margin-top: var(--s-3); color: var(--faint); font-size: 0.9375rem; }
+
+/* Small service label above each end-to-end row heading. */
+.row-service {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.625rem;
+  font-weight: 500;
+}
