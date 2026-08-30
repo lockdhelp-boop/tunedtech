@@ -429,13 +429,18 @@ a { color: inherit; }
   font-size: 0.8125rem;
   color: var(--muted);
   letter-spacing: 0.01em;
+  font-weight: 500;
 }
+/* var(--bg), not --bg-raised. The panel these sit in is --bg-raised, so the
+   inputs were exactly the same colour as their container and read as flat
+   outlines, while the selects were darker. Same value everywhere now, so every
+   field sits recessed in the panel. */
 .field input,
 .field textarea {
   font: inherit;
   font-size: 0.9375rem;
   color: var(--fg);
-  background: var(--bg-raised);
+  background: var(--bg);
   border: 1px solid var(--rule);
   border-radius: 0.5rem;
   padding: 0.75rem 0.875rem;
@@ -446,10 +451,11 @@ a { color: inherit; }
 .field input::placeholder,
 .field textarea::placeholder { color: var(--faint); }
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   outline: none;
   border-color: var(--rule-firm);
-  background: #12151a;
+  background: #0e1014;
 }
 .form .btn { margin-top: 0.5rem; justify-self: start; }
 .form-note { font-size: 0.8125rem; color: var(--faint); }
@@ -1082,7 +1088,12 @@ section > .wrap { position: relative; z-index: 1; }
   background: var(--bg-raised);
   border: 1px solid var(--rule);
   border-radius: 1.125rem;
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+.form-grid > div:last-child {
+  margin-top: 0.5rem;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
 }
 .field .opt { color: var(--faint); }
 .field select {
@@ -1383,7 +1394,7 @@ section > .wrap { position: relative; z-index: 1; }
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s-2);
+  gap: 1.375rem 1rem;      /* more vertical room than horizontal */
 }
 .form-grid .field-wide,
 .form-grid > div:last-child { grid-column: 1 / -1; }
@@ -1416,14 +1427,14 @@ section > .wrap { position: relative; z-index: 1; }
   accent-color: var(--fg);
   cursor: pointer;
 }
+/* No border: a bordered box inside a bordered panel inside a bordered field
+   set is three frames deep and reads as clutter. Indentation and colour carry
+   it instead. */
 .consent-note {
-  margin-top: 0.625rem;
-  padding: 0.875rem 1rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.625rem;
-  background: var(--bg);
+  margin-top: 0.5rem;
+  padding-left: 1.6875rem;   /* lines up under the checkbox label */
   font-size: 0.75rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--faint);
 }
 .consent-note a { color: var(--muted); }
