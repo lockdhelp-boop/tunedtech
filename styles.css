@@ -1438,3 +1438,28 @@ section > .wrap { position: relative; z-index: 1; }
   color: var(--faint);
 }
 .consent-note a { color: var(--muted); }
+
+/* ---------- Two-column comparison ---------- */
+
+.versus { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+@media (min-width: 52rem) { .versus { grid-template-columns: 1fr 1fr; gap: var(--s-4); } }
+.versus-col {
+  border: 1px solid var(--rule);
+  border-radius: 1.125rem;
+  padding: var(--s-4);
+  background: var(--bg-raised);
+}
+.versus-col.is-ours { border-color: var(--rule-firm); }
+.versus-col h3 { margin-bottom: var(--s-3); }
+.versus-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.875rem; }
+.versus-list li {
+  display: grid;
+  grid-template-columns: 1.125rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.versus-list .mark { color: var(--faint); font-size: 0.875rem; line-height: 1.6; }
+.is-ours .versus-list .mark { color: var(--accent); }
