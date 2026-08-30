@@ -1485,7 +1485,14 @@ section > .wrap { position: relative; z-index: 1; }
   transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
 }
 .type-grid li:hover { border-color: var(--rule-firm); color: var(--fg); }
-.type-note { margin-top: var(--s-3); color: var(--faint); font-size: 0.9375rem; }
+/* Plain centred text under the grid rather than another bordered chip: it is
+   a caption on the list, not another item in it. */
+.type-more {
+  margin-top: var(--s-4);
+  text-align: center;
+  color: var(--faint);
+  font-size: 0.9375rem;
+}
 
 /* Small service label above each end-to-end row heading. */
 .row-service {
@@ -1518,15 +1525,14 @@ section > .wrap { position: relative; z-index: 1; }
 /* The full sixteen categories stack into a very long column on a phone. Show
    the six most representative, then say there are more. Desktop keeps all of
    them, where the grid costs nothing. */
-/* Scoped under .type-grid: a bare .type-more is 0,1,0 and loses to the
-   .type-grid li rule at 0,1,1, so the chip stayed visible on desktop. */
-.type-grid .type-more { display: none; }
+/* Ten on desktop fills two clean rows of five; six on a phone fills three rows
+   of two. The rest stay in the markup for search engines and for anyone who
+   widens the window. */
+.type-grid li:nth-child(n+11) { display: none; }
 
 @media (max-width: 40rem) {
   .type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .type-grid li:nth-child(n+7):not(.type-more) { display: none; }
-  .type-grid .type-more { display: flex; }
-  .type-grid .type-more span { color: var(--faint); }
+  .type-grid li:nth-child(n+7) { display: none; }
 }
 
 /* The split device ran nearly the full column width on a phone. */
