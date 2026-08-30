@@ -1346,3 +1346,31 @@ section > .wrap { position: relative; z-index: 1; }
 .legal-list { color: var(--muted); padding-left: 1.125rem; margin: 0 0 var(--s-2); }
 .legal-list li { margin-bottom: 0.75rem; }
 .legal-list strong { color: var(--fg); font-weight: 500; }
+
+/* ---------- Footer, grouped ---------- */
+
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--s-4);
+  padding-bottom: var(--s-4);
+}
+.footer-col { display: grid; gap: 0.5rem; align-content: start; }
+.footer-h {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.25rem;
+}
+.footer-col a { color: var(--muted); text-decoration: none; font-size: 0.875rem; }
+.footer-col a:hover { color: var(--fg); }
+
+.site-footer .footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  justify-content: space-between;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
+}
