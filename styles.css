@@ -1496,3 +1496,19 @@ section > .wrap { position: relative; z-index: 1; }
   margin-bottom: 0.625rem;
   font-weight: 500;
 }
+
+/* Icons in the types grid, drawn inline so they stay sharp and take the
+   surrounding colour rather than needing a second file per category. */
+.type-grid li {
+  display: flex;
+  align-items: center;
+  gap: 0.6875rem;
+}
+.type-grid svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex: none;
+  color: var(--faint);
+  transition: color 0.2s var(--ease);
+}
+.type-grid li:hover svg { color: rgb(var(--signal)); }
