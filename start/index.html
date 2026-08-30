@@ -116,7 +116,7 @@
 
             <div class="field">
               <label for="f-kind">What kind of project is this?</label>
-              <select id="f-kind" name="project_kind">
+              <select id="f-kind" name="project_kind" required>
                 <option value="">Select one</option>
                 <option>An app for my company</option>
                 <option>An app for a client</option>
@@ -126,7 +126,7 @@
             </div>
             <div class="field">
               <label for="f-stage">What stage are you in?</label>
-              <select id="f-stage" name="stage">
+              <select id="f-stage" name="stage" required>
                 <option value="">Select one</option>
                 <option>Just an idea</option>
                 <option>Written a spec or sketched it out</option>
@@ -138,7 +138,7 @@
 
             <div class="field">
               <label for="f-apptype">App type</label>
-              <select id="f-apptype" name="app_type">
+              <select id="f-apptype" name="app_type" required>
                 <option value="">Select one</option>
                 <option>E-commerce</option>
                 <option>Education</option>
@@ -162,7 +162,7 @@
             </div>
             <div class="field">
               <label for="f-timeline">App launch time</label>
-              <select id="f-timeline" name="timeline">
+              <select id="f-timeline" name="timeline" required>
                 <option value="">Select one</option>
                 <option>Less than 30 days</option>
                 <option>30 to 90 days</option>
@@ -171,9 +171,10 @@
             </div>
 
             <div class="field field-wide">
-              <label for="f-budget">Target budget <span class="opt">(optional)</span></label>
-              <select id="f-budget" name="budget">
-                <option value="">Not sure yet</option>
+              <label for="f-budget">Target budget</label>
+              <select id="f-budget" name="budget" required>
+                <option value="">Select one</option>
+                <option>Not sure yet</option>
                 <option>Less than $5k</option>
                 <option>$5k to $10k</option>
                 <option>$10k to $20k</option>
@@ -184,7 +185,7 @@
             <div class="field field-wide">
               <label for="f-message">Tell us about it</label>
               <textarea id="f-message" name="message" required maxlength="350"
-                placeholder="What it should do, who it is for, and anything you have already tried."></textarea>
+                placeholder="Tell us about your app idea, and anything else we should know."></textarea>
               <span class="char-count" id="charCount">0 of 350 characters</span>
             </div>
 
@@ -291,7 +292,7 @@
     e.preventDefault();
 
     if (!form.checkValidity()) {
-      say('Please fill in the required fields with a valid email address.', 'err');
+      say('Please complete the required fields, including a valid email address.', 'err');
       form.reportValidity();
       return;
     }
